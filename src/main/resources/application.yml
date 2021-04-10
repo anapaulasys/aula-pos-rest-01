@@ -1,0 +1,41 @@
+display:
+  mach: 3
+  unit:
+    name: "mph"
+    factor: 2.23694
+
+quarkus:
+  swagger-ui:
+    path: '/swagger'
+    always-include: true
+
+  datasource:
+    jdbc:
+      url: jdbc:h2:file:/home/scarpini/tools/portalcovid
+      driver: org.h2.Driver
+    db-kind: h2
+
+#  datasource:
+#    db-kind: postgresql
+#    jdbc:
+#      url: jdbc:postgresql://localhost:5432/portalcovid
+#      driver: org.postgresql.Driver
+#    username: postgres
+#    password: senha10
+
+  hibernate-orm:
+    database:
+      generation: update
+
+br:
+  com:
+    posjava:
+      service:
+        BoletimEstadoService/mp-rest/url: http://localhost:8085
+
+mp:
+  openapi:
+    extensions:
+      smallrye:
+        info:
+          title: 'Portal Covid 2021'
